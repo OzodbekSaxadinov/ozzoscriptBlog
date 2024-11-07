@@ -1,0 +1,96 @@
+[debug] [2024-11-06T00:05:42.490Z] ----------------------------------------------------------------------
+[debug] [2024-11-06T00:05:42.502Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\CWG\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-11-06T00:05:42.503Z] CLI Version:   13.24.1
+[debug] [2024-11-06T00:05:42.503Z] Platform:      win32
+[debug] [2024-11-06T00:05:42.503Z] Node Version:  v20.18.0
+[debug] [2024-11-06T00:05:42.503Z] Time:          Wed Nov 06 2024 05:05:42 GMT+0500 (Uzbekistan Standard Time)
+[debug] [2024-11-06T00:05:42.503Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-06T00:05:42.515Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-06T00:05:42.515Z] > authorizing via signed-in user (ozzoozod@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\CWG\Desktop\ozzoscript blog\my-app
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2024-11-06T00:07:59.800Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:07:59.801Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:07:59.802Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-06T00:07:59.802Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"ozzoscript","name":"ozzoscript"}
+[debug] [2024-11-06T00:08:01.770Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2024-11-06T00:08:01.771Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/cp.6398125857140299777"}
+[debug] [2024-11-06T00:08:01.773Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:01.773Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:01.773Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 [none]
+[debug] [2024-11-06T00:08:02.824Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 200
+[debug] [2024-11-06T00:08:02.824Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 {"name":"operations/cp.6398125857140299777"}
+[debug] [2024-11-06T00:08:03.328Z] [Project Creation Poller] Retrying task index 0
+[debug] [2024-11-06T00:08:03.329Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:03.329Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:03.329Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 [none]
+[debug] [2024-11-06T00:08:04.513Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 200
+[debug] [2024-11-06T00:08:04.514Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 {"name":"operations/cp.6398125857140299777","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true}}
+[debug] [2024-11-06T00:08:05.518Z] [Project Creation Poller] Retrying task index 0
+[debug] [2024-11-06T00:08:05.520Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:05.522Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:05.522Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 [none]
+[debug] [2024-11-06T00:08:06.132Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 200
+[debug] [2024-11-06T00:08:06.132Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.6398125857140299777 {"name":"operations/cp.6398125857140299777","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"838081396350","projectId":"ozzoscript","lifecycleState":"ACTIVE","name":"ozzoscript","createTime":"2024-11-06T00:07:53.657140Z"}}
+[debug] [2024-11-06T00:08:06.134Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:06.134Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:06.134Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/ozzoscript:addFirebase [none]
+[debug] [2024-11-06T00:08:10.646Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/ozzoscript:addFirebase 200
+[debug] [2024-11-06T00:08:10.647Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/ozzoscript:addFirebase {"name":"operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2"}
+[debug] [2024-11-06T00:08:10.647Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:10.647Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:10.648Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 [none]
+[debug] [2024-11-06T00:08:13.826Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 200
+[debug] [2024-11-06T00:08:13.827Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 {"name":"operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2"}
+[debug] [2024-11-06T00:08:14.330Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2024-11-06T00:08:14.330Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:14.330Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:14.331Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 [none]
+[debug] [2024-11-06T00:08:18.126Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 200
+[debug] [2024-11-06T00:08:18.127Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 {"name":"operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2"}
+[debug] [2024-11-06T00:08:19.137Z] [Add Firebase Poller] Retrying task index 0
+[debug] [2024-11-06T00:08:19.138Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:19.138Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:19.138Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 [none]
+[debug] [2024-11-06T00:08:19.863Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 200
+[debug] [2024-11-06T00:08:19.863Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2 {"name":"operations/workflows/ODRjMmNkNzEtMWYwOS00MDQ1LWE3YTYtZWIyYWY3ZGZkNTU2","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.FirebaseProject","projectId":"ozzoscript","projectNumber":"838081396350","displayName":"ozzoscript","name":"projects/ozzoscript","resources":{"hostingSite":"ozzoscript"}}}
+[info] 
+[info] === Your Firebase project is ready! ===
+[info] 
+[info] Project information:
+[info]    - Project ID: ozzoscript
+[info]    - Project Name: ozzoscript
+[info] 
+[info] Firebase console is available at
+[info] https://console.firebase.google.com/project/ozzoscript/overview
+[info] i  Using project ozzoscript (ozzoscript) 
+[info] 
+=== Hosting Setup
+[debug] [2024-11-06T00:08:19.898Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:19.898Z] Checked if tokens are valid: true, expires at: 1730854640275
+[debug] [2024-11-06T00:08:19.899Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ozzoscript [none]
+[debug] [2024-11-06T00:08:21.021Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ozzoscript 200
+[debug] [2024-11-06T00:08:21.022Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ozzoscript {"projectId":"ozzoscript","projectNumber":"838081396350","displayName":"ozzoscript","name":"projects/ozzoscript","resources":{"hostingSite":"ozzoscript"},"state":"ACTIVE","etag":"1_e719335d-9e14-4891-9d5b-461c6ce8a569"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
