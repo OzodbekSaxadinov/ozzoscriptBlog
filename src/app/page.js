@@ -3,9 +3,19 @@ import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import Hero from "./ui/Hero";
 import Blog from "./ui/Blog";
 import Footer from "./ui/Footer";
-import { FaArrowRight, FaFileCode } from "react-icons/fa6";
+import { FaArrowRight, FaFileCode, FaReact, FaJs, FaNodeJs } from "react-icons/fa6";
 import {IoDocumentTextOutline} from "react-icons/io5"
 import Link from "next/link";
+import {
+  SiExpress,
+  SiFirebase,
+  SiMongodb,
+  SiNextdotjs,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 async function getItems() {
   const itemsCollection = collection(db, "blog");
 
@@ -61,7 +71,36 @@ export default async function Home() {
         </h1>
 
         <div className="md:flex hidden flex-wrap gap-6 justify-center px-4">
-         
+        <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-blue-100">
+            <SiReact /> React
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-green-100">
+            <FaNodeJs /> Node
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-yellow-100">
+            <FaJs /> Javascript
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-blue-200">
+            <SiTypescript /> Typescript
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-orange-100">
+            <SiFirebase /> Firebase
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-gray-100">
+            <SiExpress /> Express
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-purple-100">
+            <SiRedux /> Redux
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-indigo-100">
+            <SiNextdotjs /> Next
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-teal-100">
+            <SiTailwindcss /> Tailwind
+          </div>
+          <div className="border w-[150px] md:w-[200px] text-lg md:text-2xl flex justify-center p-2 rounded-md items-center gap-2 transition-transform transform hover:scale-105 hover:bg-red-100">
+            <SiMongodb /> Mongodb
+          </div>
         </div>
       </div>
       <Footer />
