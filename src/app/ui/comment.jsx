@@ -9,7 +9,7 @@ const Comment = ({ comment, userInfo, handleAddComment, error, handleDeleteComme
             <p className="text-xl md:text-2xl font-semibold text-sky-800 mb-4">Sharhlar</p>
             <div className="space-y-4">
                 {comment.map((p) => (
-                    <div key={p.user} className="bg-white/70 backdrop-blur-md border border-blue-100 flex gap-4 p-4 rounded-lg">
+                    <div key={p.id} className="bg-white/70 backdrop-blur-md border border-blue-100 flex gap-4 p-4 rounded-lg">
                         <div className="w-10 h-10 rounded-full overflow-hidden">
                             {p.img ? (
                                 <Image src={p.img} width={40} height={40} alt={p.name} className="object-cover" />
@@ -20,7 +20,8 @@ const Comment = ({ comment, userInfo, handleAddComment, error, handleDeleteComme
                         <div>
                             <h2 className="font-semibold text-sky-700">{p.name}</h2>
                             <p className="text-gray-800 mt-2">{p.text}</p>
-                            {p.user === userInfo.uid && (
+                            {/* <p>{p.createdAt}</p> */}
+                            {p.user === userInfo.id && (
                                 <button
                                     className="mt-2 flex items-center gap-1 text-red-600 hover:text-red-800"
                                     onClick={() => handleDeleteComment(p)}

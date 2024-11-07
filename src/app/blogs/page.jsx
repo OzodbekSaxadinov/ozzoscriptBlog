@@ -15,35 +15,31 @@ async function getItems() {
 }
 
 export default function Home() {
-  const [items, setItems] = useState([]);
+  const [blogs, setBlogs] = useState([]) 
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  
     const fetchItems = async () => {
       setLoading(true);
       const fetchedItems = await getItems();
-      setItems(fetchedItems);
+      setBlogs(fetchedItems); 
       setLoading(false);
     };
     fetchItems();
-  }, []);
+  }, []); 
 
- 
-  const filteredItems = items.filter(item =>
+  const filteredItems = blogs.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.hash.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className="w-full">
-      <div className="w-full pt-36 flex flex-col justify-center items-center">
+      <div className="w-full min-h-screen pt-36 flex flex-col justify-center items-center">
         <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-
         <div className="w-full grid md:grid-cols-12 grid-col-1 gap-6 md:px-20 px-4 justify-items-center">
           {loading ? (
-          
             Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="w-full md:col-span-6 lg:col-span-4 md:w-3/4 lg:w-full p-4 bg-white/80 backdrop-blur-md rounded-md border shadow-md">
                 <div className="relative h-72 bg-gray-300 animate-pulse rounded-md mb-4"></div>
@@ -54,14 +50,7 @@ export default function Home() {
             ))
           ) : (
             filteredItems.map(item => (
-              <Blog
-                key={item.id}
-                id={item.id}
-                url={item.url}
-                title={item.title}
-                hash={item.hash}
-                time={item.date}
-              />
+              <Blog key={item.id} id={item.id} url={item.url} title={item.title} hash={item.hash} time={item.date} />
             ))
           )}
         </div>

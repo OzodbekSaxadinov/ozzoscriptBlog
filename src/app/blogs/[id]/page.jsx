@@ -9,13 +9,13 @@ import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import Footer from "@/app/ui/Footer";
 import Comment from "@/app/ui/comment";
-
+import { v4 as uuidv4 } from "uuid";
 const SkeletonText = ({ width = "100%", height = "1rem" }) => (
     <div className="bg-gray-300 rounded" style={{ width, height }}></div>
 );
 
 const SkeletonBlog = () => (
-    <div className="w-full max-w-5xl mx-auto mt-20 p-4 md:p-8 lg:p-12 animate-pulse space-y-6">
+    <div className="w-full  max-w-5xl mx-auto mt-20 p-4 md:p-8 lg:p-12 animate-pulse space-y-6">
         <SkeletonText width="60%" height="2.5rem" />
         <SkeletonText width="100%" height="1.5rem" />
         <div className="flex justify-between">
@@ -31,7 +31,9 @@ const SkeletonBlog = () => (
 
 const SingleBlog = ({ params }) => {
     const isUser = AuthState((state) => state.isUser);
-    const [userInfo, setUserInfo] = useState({ uid: "", name: "", img: null });
+    const isAuth = AuthState((state) => state.isAuth);
+    const user = AuthState((state)=>state.user);
+    const [userInfo, setUserInfo] = useState(null);
     const [newComment, setNewComment] = useState("");
     const [comment, setComment] = useState([]);
     const { id } = use(params);
@@ -43,17 +45,14 @@ const SingleBlog = ({ params }) => {
         async function getSingleData(url) {
             const docRef = doc(db, "blog", url);
             const docSnap = await getDoc(docRef);
-
-            const userData = JSON.parse(localStorage.getItem("user"));
-            setUserInfo(userData || { uid: "", name: "", img: null });
-
+            
             if (docSnap.exists()) {
                 const data = { id: docSnap.id, ...docSnap.data() };
                 setSingleData(data);
                 setComment(data.comment || []);
                 const DOMPurify = (await import("dompurify")).default;
                 setSanitizedContent(DOMPurify.sanitize(data.content));
-                await updateDoc(docRef, { view: increment(1)});
+                await updateDoc(docRef, { view: increment(1) });
                 setPageLoading(true);
             } else {
                 console.error("Document does not exist.");
@@ -65,18 +64,24 @@ const SingleBlog = ({ params }) => {
     }, [id]);
 
     const handleAddComment = async () => {
-        if (!userInfo || !userInfo.uid) {
-            alert("Foydalanuvchi ma'lumoti mavjud emas.");
+        if (!user || !user.id) {
+            alert("Foydalanuvchi ma'lumoti mavjud emas. Siz saytga kirishingiz kerak");
             setNewComment(" ")
             return;
         }
+        const today = new Date();
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Oy 0 dan boshlanadi, shuning uchun 1 qo'shamiz
+        const year = today.getFullYear();
 
+        const currentDate = `${day}-${month}-${year}`;
         const commentObj = {
             text: newComment,
-            name: userInfo.name,
-            img: userInfo.img,
-            user: userInfo.uid,
-            createdAt: new Date()
+            name: user.name,
+            img: user.img,
+            user: user.id,
+            createdAt: currentDate,
+            id: uuidv4(),
         };
         if (newComment !== "") {
             const blogRef = doc(db, "blog", id);
@@ -101,11 +106,11 @@ const SingleBlog = ({ params }) => {
             {!pageLoading ? (
                 <div className="flex w-full justify-center items-center h-screen">
                     <SkeletonBlog />
-                    
+
                 </div>
             ) : (
                 <>
-                    <div className="flex w-full mt-20 justify-center">
+                    <div className="flex w-full min-h-screen mt-20 justify-center">
                         <Link href="/blogs" className="fixed z-10 top-32 2 left-4 md:left-20 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
                             <FaArrowLeftLong />
                         </Link>
@@ -117,8 +122,8 @@ const SingleBlog = ({ params }) => {
                                 <p className="flex items-center gap-2">{singleData.view} <MdOutlineRemoveRedEye /></p>
                             </div>
 
-                            <Comment isUser={isUser} comment={comment} error={error} handleAddComment={handleAddComment} handleDeleteComment={handleDeleteComment} newComment={newComment} setNewComment={setNewComment} userInfo={userInfo}/>
-                           
+                            <Comment isUser={isUser} comment={comment} error={error} handleAddComment={handleAddComment} handleDeleteComment={handleDeleteComment} newComment={newComment} setNewComment={setNewComment} userInfo={user} />
+
                         </div>
                     </div>
                     <Footer />

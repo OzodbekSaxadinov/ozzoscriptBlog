@@ -1,6 +1,5 @@
 'use client'
 import {  FaLinkedin, FaGithub } from "react-icons/fa";
-import { FaTelegram } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -11,14 +10,11 @@ export default function Footer() {
             <h2 className="text-xl font-bold">Ozzoscript</h2>
           </div>
           <div className="flex text-2xl space-x-4">
-            <a href="#" className="hover:text-gray-100">
+            <a href="https://www.linkedin.com/in/ozodbek-saxadinov-4b4b12301?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="hover:text-gray-100">
               <FaLinkedin />
             </a>
-            <a href="#" className="hover:text-gray-100">
+            <a href="https://github.com/OzodbekSaxadinov" className="hover:text-gray-100">
               <FaGithub />
-            </a>
-            <a href="#" className="hover:text-gray-100">
-              <FaTelegram />
             </a>
           </div>
         </div>
