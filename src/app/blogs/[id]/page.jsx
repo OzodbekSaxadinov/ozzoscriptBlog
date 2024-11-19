@@ -110,13 +110,13 @@ const SingleBlog = ({ params }) => {
                 </div>
             ) : (
                 <>
-                    <div className="flex w-full min-h-screen mt-20 justify-center">
+                    <div className="flex  w-full min-h-screen mt-20 justify-center">
                         <Link href="/blogs" className="fixed z-10 top-32 2 left-4 md:left-20 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
                             <FaArrowLeftLong />
                         </Link>
                         <div className="w-full max-w-5xl mx-auto mt-20 p-4 md:p-8 lg:p-12">
                             <h1 className="text-2xl md:text-4xl font-bold text-center text-sky-700 mb-6">{singleData.title}</h1>
-                            <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} className="text-gray-700 text-lg leading-relaxed mb-4 md:mb-8" />
+                            <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} className="text-gray-700 text-lg leading-relaxed  mb-4 md:mb-8" />
                             <div className="flex justify-between items-center text-gray-500 text-sm md:text-base mb-8">
                                 <p className="flex items-center gap-2"><CiCalendarDate /> {singleData.date}</p>
                                 <p className="flex items-center gap-2">{singleData.view} <MdOutlineRemoveRedEye /></p>
